@@ -1,0 +1,31 @@
+{
+  "name": "zhanara-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Сайт Жанары с витриной и админкой",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "start": "node server/index.js",
+    "supervise": "node scripts/supervisor.js",
+    "backup:verify": "node scripts/backup-verify.js",
+    "db:restore": "node scripts/db-restore.js",
+    "smoke": "node --test --test-concurrency=1 \"test/*.test.js\"",
+    "test": "node --test --test-concurrency=1 \"test/*.test.js\""
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mammoth": "^1.13.0",
+    "multer": "^2.4.0",
+    "pdf-parse": "^2.4.5",
+    "pdfkit": "^0.20.2",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "word-extractor": "^1.0.4"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.1.1",
+    "vite": "^8.3.1"
+  }
+}

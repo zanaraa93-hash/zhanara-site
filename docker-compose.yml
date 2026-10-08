@@ -1,0 +1,21 @@
+services:
+  app:
+    build: .
+    image: zhanara-site
+    container_name: zhanara-site
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      HOST: 0.0.0.0
+      PORT: 3000
+    ports:
+      # Bound to localhost only: put a reverse proxy with HTTPS in front for public access.
+      - "127.0.0.1:${APP_PORT:-3000}:3000"
+    volumes:
+      - site-data:/app/data
+      - site-uploads:/app/uploads
+    stop_grace_period: 15s
+
+volumes:
+  site-data:
+  site-uploads:
